@@ -1,0 +1,34 @@
+1. We need to use the same API call (getNext) for both the GraphWalker Player and for RobotFramework, otherwise
+   if we do one each call, it will get "step 1" for RF and then "step 2" for Player. We need the same value to both
+   Player and RF.
+
+2. A the moment, RF calls a function in a python script -> script makes an API call -> API returns value -> the value
+   is only the result (ok) and currentElementName (the keyword name) -> script sorts out the keyword name and
+   returns the value to RobotFramework to be used.
+
+3. I think that when we do the API call, we only need the name for our Player for it to know what path to display next.
+
+4. To be able to draw the model out in a web browser, we need to access the whole model to get these things:
+   Vertex: id, name, x and y position
+   Edges : id, name, sourceVertexId and targetVertexId
+
+5. One problem is that when RobotFramework makes a function call to the python script, the python script will send two get
+requests to the API (hasNext and getNext).
+We need to capture that call somehow with our javaScript.
+
+I'm thinking that I might use some sort of listener
+
+
+
+##########################
+# The flow of the Player #
+##########################
+
+LOOP:
+  if REST API has started (returns 200 OK):
+    if model hasNext = true
+      goto that vertex
+    else:
+      stop right there
+  else:
+    wait for 1 second and try again

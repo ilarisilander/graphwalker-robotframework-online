@@ -1,0 +1,19 @@
+1. Create a model by starting the GraphWalker Studio in terminal
+    - Locate your GraphWalker-studio file
+    - Make sure that you are in that directory when you run it with the following command
+    - java -jar graphwalker-studio-4.3.0.jar
+    - Open your browser and type: http://localhost:9090/studio.html
+    - When you are done with your graph, you can download it. Standard download folder is your "Downloads"
+      and the name is "test.json"
+
+2. Start the RESTful service
+    - Locate your GraphWalker-cli file
+    - Make sure that you are in that directory when you run it with the following command
+    - java -jar graphwalker-cli-4.3.0.jar -d all online -s RESTFUL -m C:\path\to\model.json "random(length(10))"
+    - You should now see the model loaded and it should say "Press control+C to end..."
+
+3.
+
+java -jar graphwalker-cli-4.3.0.jar -d all online -s RESTFUL -m C:\Users\TestScout\Desktop\testscouts-lia\lia-mjuk\matglad\models\model.json random(length(10))
+
+java -jar graphwalker-cli-4.3.0.jar -d all online -s RESTFUL -m D:\testscouts\lia-mjuk\matglad\models\model.json "random(length(10))"
