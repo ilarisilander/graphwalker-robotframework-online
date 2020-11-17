@@ -1,15 +1,18 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
-name = ''
+
+data = 'default'
 
 @app.route('/')
 def index():
-    return render_template("rest_index.html", name = name)
+    global data
+    print(data)
+    return render_template("rest_index.html", data = data)
 
-def get_step_name(step):
-    name = step
-    print(step)
+def get_data(step):
+    global data
+    data = step
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
