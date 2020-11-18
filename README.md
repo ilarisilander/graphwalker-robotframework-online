@@ -1,5 +1,13 @@
-# graphwalker-robotframework-online
-Run Robot Framework tests based on a model made with GraphWalker, all in GraphWalkers RESTful online mode
+# GraphWalker RobotFramework RESTful
+Build models with GraphWalker and run the tests with RobotFramework - now in RESTful online mode!
 
+### Documentation
+[GraphWalker](https://github.com/GraphWalker/graphwalker-project/wiki) | 
+[RobotFramework](https://robotframework.org/#documentation)
 
-To install required packages, use pip install -r requirements.txt
+### Download code and install Python packages
+```bash
+git clone https://github.com/ilarisilander/graphwalker-robotframework-online.git
+cd graphwalker-robotframework-online
+pip install -r requirements.txt
+```
