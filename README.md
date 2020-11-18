@@ -47,7 +47,7 @@ After creating the model in GraphWalker Studio, you download it as a **json** fi
 ### Keywords
 * #### Naming
   The keywords in RobotFramework must have the same name as the vertecies and edges in the GraphWalker model.
-  Ex. if your model has a vertex (node) with the name **v_Home_Page**, then you have a keyword with the name in the robot file.
+  Ex. if your model has a vertex (node) with the name **v_Home_Page**, then you need to have a keyword with the same name in the keyword file.
   ```robot
   *** Keywords ***
   v_Home_Page
