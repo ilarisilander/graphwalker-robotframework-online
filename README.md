@@ -6,6 +6,9 @@ Build models with GraphWalker and run the tests with RobotFramework - now in RES
    * [Table of contents](#table-of-contents)
    * [Documentation](#documentation)
    * [Installation](#installation)
+   * [Webdriver](#webdriver)
+      * [Version](#version)
+      * [Download](#download)
    * [Usage](#usage)
       * [Model](#model)
       * [Keywords](#keywords)
@@ -22,6 +25,19 @@ git clone https://github.com/ilarisilander/graphwalker-robotframework-online.git
 cd graphwalker-robotframework-online
 pip install -r requirements.txt
 ```
+
+# Webdriver
+There are several different webdrivers, but in this project, we use chromedriver.
+
+* ### Version
+  Before you download the chromedriver, you need to find out what version of chrome your computer is running.
+  Open your chrome web browser, and type the following in the URL field:
+  ```
+  chrome://version
+  ```
+  
+* ### Download
+  Download chromedriver from https://chromedriver.chromium.org/ and choose the same version as your chrome web browser has.
 
 # Usage
 
@@ -51,3 +67,16 @@ After creating the model in GraphWalker Studio, you download it as a **json** fi
   ```
 
 ### GraphWalker CLI RESTful
+Your current directory should be where your graphwalker-cli-x.x.x.jar is located. To start the REST server locally, type the following in the terminal:
+```bash
+java -jar graphwalker-cli-4.3.0.jar -d all online -s RESTFUL -m <full-path-to-json-model> "random(length(10))"
+```
+The last part, **random(length(10))**, is the generator and stop condition. It tells the graphwalker-cli how the path is generated and for how long.
+
+Please visit [GraphWalker - Generators & Stop Conditions](https://github.com/GraphWalker/graphwalker-project/wiki/Generators-and-stop-conditions) for more information.
+
+### RobotFramework
+Your current directory should be where your **test_example.robot** is located, which should be in the **robot** directory.
+```bash
+robot -d results test_example.robot
+```
