@@ -1,8 +1,6 @@
 *** Settings ***
-Documentation  Testing the flow of matglad application
-Library  OperatingSystem
+Documentation  Example test to showcase the GraphWalker/RobotFramework RESTful system
 Library  Selenium2Library
-Library  DateTime
 Library  scripts/getNext.py
 Library  scripts/restart.py
 Resource  keywords/edge_keywords.robot
@@ -18,7 +16,7 @@ ${RANGE}  999999
 ${FALSE}  false
 
 *** Test Cases ***
-Test Matglad Flow
+Test Matglad Model On The Actual Website
     Set Selenium Speed  0.1
     FOR  ${i}  IN RANGE  ${RANGE}
         Exit For Loop If  ${i} == ${RANGE}
