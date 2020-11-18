@@ -42,8 +42,9 @@ After creating the model in GraphWalker Studio, you download it as a **json** fi
   ```
   |--robot
         |--keywords
-                |--edge_keywords.robot
-                |--vertex_keywords.robot
+        |         |--edge_keywords.robot
+        |         |--vertex_keywords.robot
+        |
         |--results
         |--scripts
         |--test_example.robot
