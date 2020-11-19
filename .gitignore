@@ -2,4 +2,7 @@ results
 debug.log
 __pycache__
 checklist.todo
-resources/index.html
+resources
+player-planning.txt
+instructions.txt
+gw-to-rf-system.json
