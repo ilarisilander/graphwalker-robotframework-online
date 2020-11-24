@@ -46,7 +46,7 @@ After creating the model in GraphWalker Studio, you download it as a **json** fi
 
 ### Keywords
 * #### Naming
-  The keywords in RobotFramework must have the same name as the vertecies and edges in the GraphWalker model.
+  The keywords in RobotFramework must have the same name as the vertices and edges in the GraphWalker model.
   Ex. if your model has a vertex (node) with the name **v_Home_Page**, then you need to have a keyword with the same name in the keyword file.
   ```robot
   *** Keywords ***
@@ -54,7 +54,7 @@ After creating the model in GraphWalker Studio, you download it as a **json** fi
       Log To Console  Hello World!
   ```
 * ### Structure
-  A good way of storing the vertecies and edges is to create one keyword file for each type.
+  A good way of storing the vertices and edges is to create one keyword file for each type.
   ```
   |--robot
         |--keywords
@@ -76,6 +76,7 @@ The last part, **random(length(10))**, is the generator and stop condition. It t
 Please visit [GraphWalker - Generators & Stop Conditions](https://github.com/GraphWalker/graphwalker-project/wiki/Generators-and-stop-conditions) for more information.
 
 ### RobotFramework
+When starting the RobotFramework test, your GraphWalker API should be running.
 Your current directory should be where your **test_example.robot** is located, which should be in the **robot** directory.
 ```bash
 robot -d results test_example.robot
