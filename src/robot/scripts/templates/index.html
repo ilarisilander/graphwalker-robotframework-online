@@ -62,7 +62,7 @@ THE SOFTWARE.
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 50px;
+    top: 80px;
     left: 0px;
   }
 </style>
@@ -72,7 +72,8 @@ THE SOFTWARE.
     <div>
       <input type="file" id="file-input" />
       <button id="read-button" onclick="getModel()">Print Model</button>
-      <p id="step">{{data}}</p>
+      <button id="test-button" onclick="testButton()">Test</button>
+      <p id="step">Next step: {{data}}</p> <!-- This is the data sent from Flask -->
     </div>
     <div>
       <p id="modelAndGenerator"></p>

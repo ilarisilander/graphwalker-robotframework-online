@@ -3,6 +3,7 @@ Documentation  Example test to showcase the GraphWalker/RobotFramework RESTful s
 Library  Selenium2Library
 Library  scripts/getNext.py
 Library  scripts/restart.py
+Library  scripts/communicator.py
 Resource  keywords/edge_keywords.robot
 Resource  keywords/vertex_keywords.robot
 Resource  keywords/settings_keywords.robot
@@ -20,7 +21,7 @@ ${FALSE}  false
 # Calls a function called "get_next()" in the getNext python script and saves the return value in ${next_step}.
 # The return value can either be a vertex/edge name from the model or it can be "false".
 # If the return value is false (no more steps in the model) then the loop ends.
-# If the variable holds the name of a step, then it will run a keyword with the same name if it exists.
+# If the variable holds the name of a step, then it will run a keyword with the same name if it exists in the keyword file.
 
 *** Test Cases ***
 Test Matglad Model On The Actual Website

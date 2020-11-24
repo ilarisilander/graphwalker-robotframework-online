@@ -1,6 +1,5 @@
 import requests
 import json
-import communicator
 
 '''
 This script is imported in the robot test file as a Library.
@@ -14,14 +13,17 @@ The name is then returned to the RobotFramework test and the name is also sent t
 '''
 
 def get_next():
-    has_next_response = requests.get('http://localhost:8887/graphwalker/hasNext')
+    has_next_response = requests.get('http://localhost:8887/graphwalker/hasNext') # GET request to check if model has a step (returns true or false)
     response_json = json.loads(has_next_response.text)
-    if response_json['hasNext'] == 'true': # Check if there are any more steps in the REST API
-        get_next_response = requests.get('http://localhost:8887/graphwalker/getNext')
+    if response_json['hasNext'] == 'true': # If the response is true (has a step)
+        get_next_response = requests.get('http://localhost:8887/graphwalker/getNext') # Get the next step from REST API
         json_file = json.loads(get_next_response.text)
-        #communicator.get_data(json_file['currentElementName']) # Send step name to communicator
+        json_object = {'step': json_file['currentElementName']} # Create an object with the name of the step
+        data = json.dumps(json_object, indent=4) # Convert the object to JSON
+        new_headers = {'Content-type': 'application/json', 'Accept': 'text/plain'} # Headers for the post request
+        requests.post('http://127.0.0.1:5000/', data = data, headers = new_headers) # Send the JSON to the Flask server
         return json_file['currentElementName'] # Send step name to RobotFramework
     elif response_json['hasNext'] == 'false':
-        return 'false'
+        return 'false' # Return false to RobotFramework (no more steps in the model)
 
-# print(get_next())
+#get_next() # For testing purpose. run: python getNext.py to activate the get_next() manually (no need to run RobotFramework)
